@@ -52,7 +52,7 @@ bool authenticateClient(int connectionSocket)
    while (attemptCounter != 2)
    {
     // If the PIN received from the client does not match that expected by the server, a response is sent.
-    if (receivedFromClient != authenticationPIN)
+    if (strcmp(receivedFromClient, authenticationPIN) != 0)
     {
 
        send(connectionSocket, messageRetry, sizeof(messageRetry), 0); 

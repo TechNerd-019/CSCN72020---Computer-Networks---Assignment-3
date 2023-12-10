@@ -22,7 +22,7 @@ int main(void)
     // First step is to create a socket. Up to here, no changes done from the TCP lab.
 
     int serverSocket;              // Using a datagram protocol (UDP) as per assignment specifications.
-    serverSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+    serverSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (serverSocket == -1) 
     {
         std::cout << "ERROR: Failed to create ServerSocket" << std::endl;
