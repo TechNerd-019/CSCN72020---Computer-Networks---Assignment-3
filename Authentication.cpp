@@ -9,10 +9,8 @@
 *
 */
 
-
+// Additional libraries and dependencies included within these headers:
 #include "Authentication.h"
-#include <iostream>
-#include <cstring>
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -76,8 +74,4 @@ bool authenticateClient(int connectionSocket)
    // If the PIN is not entered properly within the allocated ammount of time,
    // the function returns false, and the client is dropped.
    return false;
-
-
-
-  
 }

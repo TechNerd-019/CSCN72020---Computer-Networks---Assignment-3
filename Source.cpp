@@ -9,16 +9,13 @@
 *
 */
 
-#include <iostream>
-#include <cstring>
+// Additional libraries and dependencies included within these headers:
+#include "Authentication.h"
+#include "Post.h"
+// Networking libraries:
 #include <unistd.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-
-// Additional headers for project execution are included:
-
-#include "Authentication.h"
-
 
 int main(void)
 {
@@ -81,6 +78,11 @@ int main(void)
     // Depending on the boolean value returned by the function, the connection is dropped, and the server keeps
     // on listening, or the server may send and receive messages to the authenticated client.
 
+
+    // A variable for controlling options from the client menu is initialized and defined:
+
+    int clientChoice = 0;
+
     if (authenticationStatus == false)
     {
         close(connectionSocket);
@@ -88,10 +90,16 @@ int main(void)
 
     else
     {
+        switch(clientChoice)
+        {
+            case 1:
+              receivedMessage(connectionSocket);
+              break;
+            case 2:
+      
+        }
 
     }
  
     return 0;
-
-
 }
